@@ -1,0 +1,43 @@
+.landing {
+	width: 100%;
+	height: 100%;
+	background-image: url("/asset/bg-landing.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	/*background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
+}
+
+.ua-logo {
+	width: 100%;
+}
+
+.ua-logo-container {
+	padding-top: 30%;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.app-name {
+	font-family: "SF Pro Display", sans-serif;
+	color: white;
+	font-size: 3.9em;
+	letter-spacing: 4px;
+	margin-top: 0;
+}
+
+.ui.white.fluid.button {
+  background: white;
+  margin-top: 5%;
+  border-radius: 0.3em;
+  font-size: 1.2em;
+}
+
+.button-container {
+	font-size: 2.5em;
+	color: white;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40%;
+}
