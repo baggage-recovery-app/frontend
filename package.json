@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/baggage-recovery-app/frontend/issues"
   },
-  "homepage": "https://github.com/baggage-recovery-app/frontend#readme"
+  "homepage": "https://github.com/baggage-recovery-app/frontend#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
