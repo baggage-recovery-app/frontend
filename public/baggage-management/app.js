@@ -25,6 +25,10 @@ function showBags(res) {
 		    <div class="meta">
 		      <span class="date">Added in ${bag.time}</span>
 		    </div>
+		    <div class="ui fluid buttons">
+					<button class="ui blue basic button">Edit</button>
+  				<button class="ui yellow basic button">Delete</button>
+		    </div>
 		  </div>
 		</div>`
 	})
