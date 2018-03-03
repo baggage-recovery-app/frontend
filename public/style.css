@@ -1,3 +1,4 @@
+/*landing page*/
 .landing {
 	width: 100%;
 	height: 100%;
@@ -21,7 +22,7 @@
 .app-name {
 	font-family: "SF Pro Display", sans-serif;
 	color: white;
-	font-size: 3.9em;
+	font-size: 19px;
 	letter-spacing: 4px;
 	margin-top: 0;
 }
@@ -29,15 +30,89 @@
 .ui.white.fluid.button {
   background: white;
   margin-top: 5%;
-  border-radius: 0.3em;
-  font-size: 1.2em;
+  border-radius: 5px;
+  font-size: 18px;
 }
 
 .button-container {
-	font-size: 2.5em;
+	font-size: 16px;
 	color: white;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 40%;
+}
+/*landing page*/
+
+/*nav bar*/
+.nav-bar {
+	background: #0033aa;
+	height: 64px;
+}
+
+.nav-bar-button {
+	font-size: 18px;
+	padding-top: 23px;
+	width: 65px;
+	display: inline-block;
+}
+
+.nav-bar-button > a {
+	color: white;
+}
+
+.nav-bar-logo {
+	display: inline-block;
+	width: 110px;
+	float: right;
+	padding: 23px 10px 0 0;
+}
+/*nav bar*/
+
+.main {
+	width: 90%;
+	margin: 20px auto 0 auto;
+}
+
+.main > h1 {
+	color: #0033aa;
+	font-weight: normal;
+	margin: 0;
+}
+
+.main > .ui.input {
+	padding-top: 10px;
+}
+
+.bottom-button {
+	width: 90%;
+	margin: 10px auto;
+}
+
+.bottom-fixed-button {
+	width: 90%;
+	position: absolute;
+	bottom: 20px;
+	left: 5%;
+}
+
+.ui.button.ua-blue {
+	color: #fff;
+	background: #0033aa;
+	font-size: 20px;
+}
+
+#cards {
+	width: 100%;
+	margin: 10px auto;
+}
+
+.ui.raised.card {
+	width:100%;
+}
+
+.card-image {
+	width: 100%;
+	height: 337px;
+	overflow: hidden;
 }
