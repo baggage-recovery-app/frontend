@@ -1,39 +1,37 @@
 window.onload = function () {
-	init()
+  init()
 }
 
 function init() {
-	if (getCookie('pid') != null) {
-	var url = 'getSavedBag?pid=' + getCookie('pid')
-		$.get(url, function(res) {
-			console.log(res)
-			showBags(res)
-		})
-	}
+  if (getCookie('pid') != '') {
+  var url = 'getSavedBag?pid=' + getCookie('pid')
+    $.get(url, function(res) {
+      showBags(res)
+    })
+  }
 }
 
 function showBags(res) {
-	var cards =""
-	$.each(res, function(i, bag) {
-		cards +=
-		`<div class="ui raised card">
-		  <div class="card-image image">
-		    <img src="${bag.url}">
-		  </div>
-		  <div class="content">
-		    <a class="header">${bag.bagName}</a>
-		    <div class="meta">
-		      <span class="date">Added in ${bag.time}</span>
-		    </div>
-		    <div class="ui fluid buttons">
-					<button class="ui blue basic button">Edit</button>
-  				<button class="ui yellow basic button">Delete</button>
-		    </div>
-		  </div>
-		</div>`
-	})
-	console.log(cards)
-	$("#cards").append(cards)
+  var cards =""
+  $.each(res, function(i, bag) {
+    cards +=
+    `<div class="ui raised card">
+      <div class="card-image image">
+        <img src="${bag.url}">
+      </div>
+      <div class="content">
+        <a class="header">${bag.bagName}</a>
+        <div class="meta">
+          <span class="date">Added in ${bag.time}</span>
+        </div>
+        <div class="ui fluid buttons">
+          <button class="ui blue basic button">Edit</button>
+          <button class="ui yellow basic button">Delete</button>
+        </div>
+      </div>
+    </div>`
+  })
+  $("#cards").append(cards)
 }
 
 function getCookie(cname) {
@@ -53,7 +51,23 @@ function getCookie(cname) {
 }
 
 function submitPassengerId() {
-	var pid = 'pid=' + $("#passengerId").val()
-	document.cookie = pid;
-	window.location.replace("my-baggage.html");
+  var pid = 'pid=' + $("#passengerId").val() + "; path=/baggage-management/my-baggage.html"
+  document.cookie = pid;
+  window.location.replace("my-baggage.html");
+}
+
+// ============================================================
+// Add new Bag
+function displayAsImage() {
+  var file = $("#bagImageInput")[0].files[0]
+  var imgURL = URL.createObjectURL(file),
+      img = document.createElement('img');
+
+  img.onload = function() {
+    URL.revokeObjectURL(imgURL);
+  };
+
+  img.src = imgURL;
+  $("#preview").append(img)
+  $(".bottom-fixed-button").removeClass("bottom-fixed-button").addClass("bottom-button")
 }
