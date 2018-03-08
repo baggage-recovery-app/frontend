@@ -10,22 +10,43 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html')
 })
 
-app.get('/baggage-management/getSavedBag', function(req, res) {
-  pid = req.query.pid
+app.get('/baggage-management/getSavedBags', function(req, res) {
+  var pid = req.query.pid
   if (pid === '123') {
     res.send([
     {
       bagName: "my samsonite bag",
+      bagID: "42567733",
       url: "../asset/bag1.jpg",
       time: "02/28/2018"
     },
     {
       bagName: "my same bag",
+      bagID: "40863593",
       url: "../asset/bag2.jpg",
       time: "03/01/2018"
     }
     ])
   }
+})
+
+app.get('/baggage-management/getSavedBag', function(req, res) {
+  var bagid = req.query.bagid
+  if (bagid === '42567733') {
+    res.send(
+    {
+      bagName: "my samsonite bag",
+      bagID: "42567733",
+      url: "../asset/bag1.jpg",
+      time: "02/28/2018"
+    })
+  }
+})
+
+app.get('/baggage-management/deleteBag', function(req, res) {
+  var bagid = req.query.bagid
+  console.log("bag " + bagid + " deleted!")
+  res.send("bag " + bagid + " deleted!")
 })
 
 app.post('/baggage-management/addNewBag', function (req, res) {
