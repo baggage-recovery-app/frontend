@@ -17,11 +17,12 @@
   </div>
 
   <div class="main">
-    <form action="/baggage-management/addNewBag" method="post" enctype="multipart/form-data">
-      <h1>Add New Bag</h1>
+    <form action="/baggage-management/editBag" method="post" enctype="multipart/form-data">
+      <h1>Edit Bag</h1>
       <div class="meta">
-        Please upload an image of your baggage. Make sure your image is clear and capture the entire bag.
+        Please upload a new image of your baggage. Make sure your image is clear and capture the entire bag.
       </div>
+      <div id="oldImage"></div>
       <div class="upload-image">
         <!-- <img src="../asset/upload.svg" alt=""> -->
         <input id="bagImageInput" onchange="displayAsImage()" type="file" accept="image/*" name="bagImage">
@@ -33,6 +34,7 @@
       </div>
       <div class="ui fluid input">
         <input type="text" placeholder="Input here" id="bagName" name="bagName">
+        <input style="display: none" type="text" id="bagID" name="bagID">
       </div>
       <div class="bottom-fixed-button">
         <input class="ui ua-blue fluid button" type="Submit" value="Submit">
